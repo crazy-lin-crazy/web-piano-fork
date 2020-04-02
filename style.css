@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400&display=swap");
+
+*{
+  color: #F5F5F5;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root{
+  font-size: 18px;
+  user-select: none;
+}
+
+body{
+  height: 100vh;
+  margin: 0;
+  background-color: #3E4750;
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+footer{
+  padding: .2rem 0;
+  font-size: .8rem;
+  position: absolute;
+  bottom: 0;
+}
+
+h1{
+  margin: 0 0 6rem 0;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+p{
+  max-width: 90vw;
+  margin-top: 4rem;
+  font-size: .9rem;
+  text-align: center;
+}
+
+.piano{
+  display: flex;
+}
+
+.key{
+  width: var(--width);
+  height: calc(var(--width) * 4);
+}
+
+.white{
+  --width: 100px;
+  background-color: #FFF;
+  border-right: 4px solid #555;
+}
+
+.white:last-child{
+  border: none;
+}
+
+.white.active{
+  background-color: #DDD;
+}
+
+.black{
+  --width: 60px;
+  margin: 0 calc(var(--width) / -2);
+  background-color: #000;
+  z-index: 1;
+}
+
+.black.active{
+  background-color: #222;
+}
+
+@media only screen and (max-width: 768px){
+  h1{
+    margin: 0 0 3rem 0;
+    font-size: 3rem;
+  }
+
+  p{
+    display: none;
+  }
+
+  .key.white{
+    --width: 50px;
+  }
+
+  .key.black{
+    --width: 30px;
+  }
+}
